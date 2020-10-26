@@ -25,8 +25,9 @@ public class JankenController {
 		String sessionId = s.getId();
 		if(!(sessionId.equals(jankenuser.getSessionId()))) {
 			jankenuser.setSessionId(sessionId);
+			rep.save(jankenuser);
 		}
-		rep.save(jankenuser);
+		
 		s.setAttribute("user", jankenuser);
 		s.setAttribute("hantei", hantei);
 		model.addAttribute("msg","選んでください！");
