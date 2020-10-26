@@ -23,7 +23,9 @@ public class JankenController {
 	@GetMapping("/")
 	public String index(Model model,HttpSession s, @ModelAttribute Jankenuser jankenuser,@ModelAttribute Hantei hantei) {
 		String sessionId = s.getId();
-		jankenuser.setSessionId(sessionId);
+		if(!(sessionId.equals(jankenuser.getSessionId()))) {
+			jankenuser.setSessionId(sessionId);
+		}
 		rep.save(jankenuser);
 		s.setAttribute("user", jankenuser);
 		s.setAttribute("hantei", hantei);
