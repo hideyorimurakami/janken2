@@ -57,7 +57,23 @@
 </tbody>
 
 <tfoot>
+<tr>
+<th>
+勝[[${jankenuser.win}]]回
+</th>
+<th>
+分[[${jankenuser.draw}]]回
+</th>
+<th>
+負[[${jankenuser.lose}]]回
+</th>
+</tr>
 
+<tr>
+<th colspan="3" >
+[[${msg}]]
+</th>
+</tr>
 <tr>
 <th>
 <form th:action="@{/janken}" method="post">
@@ -78,23 +94,9 @@
 </form>
 </th>
 </tr>
-<tr>
-<th colspan="3" >
-[[${msg}]]
-</th>
-</tr>
 
-<tr>
-<th>
-勝[[${jankenuser.win}]]回
-</th>
-<th>
-分[[${jankenuser.draw}]]回
-</th>
-<th>
-負[[${jankenuser.lose}]]回
-</th>
-</tr>
+
+
 
 </tfoot>
 </table>
